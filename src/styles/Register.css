@@ -1,0 +1,73 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.register-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.register-form h2 {
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: calc(100% - 20px); /* Ajuste para el padding interno */
+  padding: 12px 10px;
+  border: 1px solid #ccc; /* Color por defecto, será sobrescrito por el JS */
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+  outline: none;
+  border-width: 2px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  filter: brightness(1.1); /* Ligeramente más brillante al pasar el mouse */
+}
+
+.error-message,
+.success-message {
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}

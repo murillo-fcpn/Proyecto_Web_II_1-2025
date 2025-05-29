@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const mockUsers = [
-    { username: 'juan', password: '1234', name: 'Juan Perez' },
-];
+// const mockUsers = [
+//     { username: 'juan', password: '1234', name: 'Juan Perez' },
+// ];
 
 export default function Login({ onLogin }) {
     const [form, setForm] =  useState({ username: '', password: '' });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        const user = mockUsers.find(u => u.username === form.username && u.password === form.password);
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const user = users.find(u => u.username === form.username && u.password === form.password);
         if (user) {
             onLogin(user);
         }
