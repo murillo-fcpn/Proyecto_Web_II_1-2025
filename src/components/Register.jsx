@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import colors from '../styles/colors'; 
-import '../styles/Register.css';     
+import colors from '../styles/colors';
+import '../styles/Register.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register({ onLogin }) {
     const [username, setUsername] = useState('');
@@ -9,8 +10,10 @@ export default function Register({ onLogin }) {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
 
         if (!username || !password || !fullName) {
             setError('Todos los campos son obligatorios.');
@@ -36,7 +39,11 @@ export default function Register({ onLogin }) {
         setUsername('');
         setPassword('');
         setFullName('');
-    };
+
+        setTimeout(() => {
+            navigate('/');
+        }, 2000);
+    }
 
     return (
         <div className="register-container" style={{ backgroundColor: colors.background }}>
